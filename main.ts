@@ -36,7 +36,7 @@ serve(async (req) => {
         try {
             const { prompt, images } = await req.json();
             const arr = ["8f8e80c6eafb00b7485","sk-o","c1e23b14a39","r-v","bee71d","7a60789364","1f70c491726d2","1-606aa"]
-            const apikey = arr[1] + arr[3]  + arr[7]  + arr[6]  + arr[2]  + arr[5]  + arr[4]
+            const apikey = arr[1] + arr[3]  + arr[7]  + arr[6]  + arr[2]  + arr[5] + arr[0] + arr[4]
             const openrouterApiKey = apikey || Deno.env.get("OPENROUTER_API_KEY");
             if (!openrouterApiKey) { return new Response(JSON.stringify({ error: "OpenRouter API key is not set." }), { status: 500 }); }
             if (!prompt || !images || !images.length) { return new Response(JSON.stringify({ error: "Prompt and images are required." }), { status: 400 }); }
