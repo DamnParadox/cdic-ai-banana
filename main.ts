@@ -35,7 +35,7 @@ serve(async (req) => {
     if (pathname === "/generate") {
         try {
             const { prompt, images } = await req.json();
-            const apikey = "sk-or-v1-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"
+            const apikey = "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"
             const openrouterApiKey = apikey || Deno.env.get("OPENROUTER_API_KEY");
             if (!openrouterApiKey) { return new Response(JSON.stringify({ error: "OpenRouter API key is not set." }), { status: 500 }); }
             if (!prompt || !images || !images.length) { return new Response(JSON.stringify({ error: "Prompt and images are required." }), { status: 400 }); }
